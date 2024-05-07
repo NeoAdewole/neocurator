@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "neocurator/project",
+  "version": "0.1.0",
+  "title": "Project in portfolio",
+  "category": "widgets",
+  "icon": "briefcase",
+  "description": "A project block.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "neocurator",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

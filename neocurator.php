@@ -40,4 +40,7 @@ foreach ($allFiles as $filename) {
 register_activation_hook(__FILE__, array('neocurator', 'nc_plugin_activation'));
 register_deactivation_hook(__FILE__, array('neocurator', 'nc_plugin_deactivation'));
 
-// add_action('init', array('neocurator', 'init'));
+add_action('init', array('Neocurator', 'init'));
+// register meta box
+add_action('init', 'neo_project_meta_box');
+// register blocks

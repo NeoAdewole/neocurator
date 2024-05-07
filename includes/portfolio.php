@@ -10,23 +10,26 @@ function neo_project_meta_box()
 {
 
   /* Add meta boxes on the 'add_meta_boxes' hook. */
-  // add_action('add_meta_boxes', 'add_project_meta_boxes');
+  add_action('add_meta_boxes', 'register_project_meta_box');
 
   /* Save post meta on the 'save_post' hook. */
-  // add_action('save_post', 'save_project_details_meta', 10, 2);
+  add_action('save_post', 'save_project_details_meta', 10, 2);
 }
 
 /* Create one or more meta boxes to be displayed on the post editor screen. */
-function add_project_meta_boxes()
+function register_project_meta_box()
 {
 
   add_meta_box(
     'project-details',      // Unique ID
     esc_html__('Project Class', 'example'),    // Title
     'project_details_meta_box',   // Callback function
-    'projects',         // Admin page (or post type)
+    'project',         // Screen: Admin page (or post type)
     'normal',         // Context
-    'default'         // Priority
+    'default',         // Priority
+    array(
+      '__block_editor_compatible_meta_box' => false,
+    )
   );
 }
 
