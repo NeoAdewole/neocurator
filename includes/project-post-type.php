@@ -1,5 +1,8 @@
 <?php
 
+/** 
+ * Register project post type
+ */
 function create_project_post_type()
 {
   $labels = array(
@@ -35,10 +38,10 @@ function create_project_post_type()
     'has_archive'        => true,
     'exclude_from_search' => false,
     'capability_type'    => 'post',
-    'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments'),
+    'supports'           => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'custom-fields'),
     'description'        => __('A custom post type for portfolio projects', 'neocurator'),
     'show_in_rest'       => true,
-    'rewrite'            => array('slug' => 'project'),
+    'rewrite'            => array('slug' => 'projects'),
     'template'           => array(
       array('core/image', array(
         'align'         => 'left',
@@ -55,4 +58,52 @@ function create_project_post_type()
   register_post_type('project', $args);
 }
 
-add_action('init', 'create_project_post_type');
+// add_action('init', 'create_project_post_type');
+
+
+/** 
+ * Register block for project post type
+ */
+
+function neocurator_project_post_types_block_init()
+{
+  register_block_type(
+    plugin_dir_path(__FILE__) . 'build',
+    array(
+      'render_callback' => 'neocurator_project_post_types_render_callback'
+    )
+  );
+  // Register the project post type
+  create_project_post_type();
+}
+add_action('init', 'neocurator_project_post_types_block_init');
+
+function neocurator_project_post_types_render_callback($atts, $content, $block)
+{
+  ob_start();
+  require plugin_dir_path(__FILE__) . 'build/template.php';
+  return ob_get_clean();
+}
+/**
+ * Register projrct meta
+ */
+
+register_post_meta(
+  'project',
+  'project-name',
+  array(
+    'show_in_rest' => true,
+    'single' => true,
+    'type' => 'string',
+  )
+);
+
+register_post_meta(
+  'project',
+  'project-type',
+  array(
+    'show_in_rest' => true,
+    'single' => true,
+    'type' => 'string',
+  )
+);
