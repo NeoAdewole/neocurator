@@ -39,6 +39,17 @@ function create_project_post_type()
     'description'        => __('A custom post type for portfolio projects', 'neocurator'),
     'show_in_rest'       => true,
     'rewrite'            => array('slug' => 'project'),
+    'template'           => array(
+      array('core/image', array(
+        'align'         => 'left',
+      )),
+      array('core/heading', array(
+        'align'         => 'Add Author...',
+      )),
+      array('core/paragraph', array(
+        'align'         => 'Add Description...',
+      )),
+    ),
   );
 
   register_post_type('project', $args);
