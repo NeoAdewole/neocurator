@@ -49,7 +49,7 @@ class Neocurator
       add_option('Activated_neocurator', true);
     }
 
-    create_project_post_type();
+    // create_project_post_type();
     flush_rewrite_rules();
   }
 
