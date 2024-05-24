@@ -36,6 +36,16 @@ register_post_meta(
 
 register_post_meta(
   'project',
+  'project-status',
+  array(
+    'show_in_rest' => true,
+    'single' => true,
+    'type' => 'string',
+  )
+);
+
+register_post_meta(
+  'project',
   'project-type',
   array(
     'show_in_rest' => true,
