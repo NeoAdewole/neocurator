@@ -12,6 +12,7 @@
 * License URI:        https://www.gnu.org/licenses/gpl-2.0.html
 * Domain Path:        /languages
 * Tags:               custom-menu, featured-images, theme-options, clear-cut
+* Text Domain:        neocurator
 */
 
 // Make sure we don't expose any info if called directly
@@ -35,12 +36,12 @@ foreach ($allFiles as $filename) {
   include_once($filename);
 }
 
-
 // Hooks
 register_activation_hook(__FILE__, array('neocurator', 'nc_plugin_activation'));
 register_deactivation_hook(__FILE__, array('neocurator', 'nc_plugin_deactivation'));
 
 add_action('init', array('Neocurator', 'init'));
 // register meta box
-add_action('init', 'neo_project_meta_box');
+/* Disable and load through blocks */
+// add_action('init', 'neo_project_meta_box');
 // register blocks
