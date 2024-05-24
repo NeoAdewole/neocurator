@@ -11,7 +11,7 @@ import { useEntityProp } from '@wordpress/core-data';
 import { useSelect } from '@wordpress/data';
 import { PanelBody, TextControl, DatePicker, SelectControl } from '@wordpress/components';
 
-const ProjectMeta = ({ context }) => {
+const ProjectMeta = () => {
   // Get the value of mera and a function for updating meta from useEntityProp.
   const [meta, setMeta] = useEntityProp('postType', 'project', 'meta');
   const { title } = useSelect(
@@ -28,6 +28,7 @@ const ProjectMeta = ({ context }) => {
     'project-duration': projectDuration,
     'project-name': projectName,
     'project-type': projectType,
+    'project-status': projectStatus,
   } = meta;
 
   const projectTypes = [
@@ -37,6 +38,13 @@ const ProjectMeta = ({ context }) => {
     { label: 'Video', value: 'video' },
     { label: 'Management', value: 'management' },
     { label: 'Data', value: 'data' }
+  ];
+
+  const statuses = [
+    { label: "Planning", value: 'planning' },
+    { label: 'In-Progress', value: 'in-progress' },
+    { label: 'Blocked', value: 'blocked' },
+    { label: 'Complete', value: 'complete' },
   ];
 
   return (
@@ -76,6 +84,12 @@ const ProjectMeta = ({ context }) => {
         value={projectType}
         options={projectTypes}
         onChange={(selection) => { setMeta({ ...meta, 'project-type': selection }) }}
+      />
+      <SelectControl
+        label={__('Project Status', 'neocuration')}
+        value={projectStatus}
+        options={statuses}
+        onChange={(selection) => { setMeta({ ...meta, 'project-status': selection }) }}
       />
     </PluginDocumentSettingPanel>
   )
