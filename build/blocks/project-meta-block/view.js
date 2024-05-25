@@ -17,9 +17,9 @@
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-/*!********************************************!*\
-  !*** ./src/blocks/project-details/view.js ***!
-  \********************************************/
+/*!***********************************************!*\
+  !*** ./src/blocks/project-meta-block/view.js ***!
+  \***********************************************/
 __webpack_require__.r(__webpack_exports__);
 /**
  * Use this file for JavaScript code that you want to run in the front-end 
@@ -44,7 +44,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 /* eslint-disable no-console */
-console.log("Hello World! (from neocurator-project-details block)");
+console.log("Hello World! (from create-block-project-meta-block block)");
 /* eslint-enable no-console */
 /******/ })()
 ;

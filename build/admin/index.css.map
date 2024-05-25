@@ -1,1 +1,0 @@
-{"version":3,"file":"admin/index.css","mappings":";;;AAAA;IACI,cAAc;IACd,mBAAmB;IACnB,gBAAgB;AACpB,C","sources":["webpack://neocuration-blocks/./src/admin/main.css"],"sourcesContent":["#og-img-preview {\r\n    display: block;\r\n    margin-bottom: 20px;\r\n    max-width: 600px;\r\n}"],"names":[],"sourceRoot":""}

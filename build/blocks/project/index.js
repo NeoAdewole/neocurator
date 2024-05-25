@@ -85,9 +85,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function Edit() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('A Wild Project Block Has Appeared – hello from the editor!', 'project'));
+  });
 }
 
 /***/ }),
@@ -131,7 +131,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function save() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Hi from Project save");
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", null);
 }
 
 /***/ }),
@@ -142,7 +142,7 @@ function save() {
   \***************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"neocurator/project","version":"0.1.0","title":"Project in portfolio","category":"widgets","icon":"briefcase","description":"A project block.","example":{},"supports":{"html":false},"textdomain":"neocurator","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"neocurator/project","version":"0.1.0","title":"Project in portfolio","category":"widgets","icon":"images-alt2","description":"A project block.","example":{},"supports":{"html":false},"textdomain":"neocurator","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
